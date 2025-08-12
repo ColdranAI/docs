@@ -1,0 +1,307 @@
+@import "tailwindcss";
+@import "fumadocs-ui/css/neutral.css";
+@import "fumadocs-ui/css/preset.css";
+@import "./theme.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@source '.';
+@source '../components/**/*.{ts,tsx}';
+@source '../lib/**/*.{ts,tsx}';
+@source '../node_modules/fumadocs-ui/dist/**/*.js';
+
+:root {
+  /* Override Fumadocs navbar */
+  --fd-nav-height: 70px !important;
+
+  /* Navigation alignment offset */
+  --nav-offset: 175px;
+
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-aeonik-mono);
+  --font-fono: var(--font-aeonik-fono);
+
+  --background: var(--color-neutral-50);
+  --foreground: var(--color-neutral-900);
+  --card: var(--color-neutral-100);
+  --card-foreground: 240 10% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  --primary: var(--color-neutral-900);
+  --primary-foreground: 355.7 100% 97.3%;
+  --secondary: 40 13% 91%;
+  --secondary-foreground: 240 5.9% 10%;
+  --muted: 40 14.3% 95.9%;
+  --muted-foreground: var(--color-neutral-400);
+  --accent: 40 13% 91%;
+  --accent-foreground: 240 5.9% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: var(--color-neutral-200);
+  --input: 240 5.9% 90%;
+  --ring: 240 5.9% 90%;
+  --radius: 0.5rem;
+  --hiro: var(--color-orange-500);
+  --icon: var(--color-neutral-950);
+  --inverted: var(--color-neutral-900);
+  --code: var(--color-white);
+  --highlight: 40 13% 91%;
+  --content: 32.31 11.93% 78.63%;
+  --dark: 30 5.7% 7.5%;
+  --gradient: #59564f;
+  --contrast: 0 7.7% 5.1%;
+  --sidebar-background: 0 0% 98%;
+  --sidebar-foreground: 240 5.3% 26.1%;
+  --sidebar-primary: 240 5.9% 10%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 240 4.8% 95.9%;
+  --sidebar-accent-foreground: 240 5.9% 10%;
+  --sidebar-border: 220 13% 91%;
+  --sidebar-ring: 217.2 91.2% 59.8%;
+
+  /* Chart Colors */
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+
+  /* Sidebar Colors */
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.87 0 0);
+
+  /* CodeHike Styling */
+  --ch-0: var(--color-white);
+  --ch-1: #7a756b;
+  --ch-2: #7c7f93; /* Not used */
+  --ch-3: #b5aca1;
+  --ch-4: #48944c;
+  --ch-5: #ea76cb;
+  --ch-6: #ff5500;
+  --ch-7: #bc812e;
+  --ch-8: #179299;
+  --ch-9: #3676b7;
+  --ch-10: #bc812e;
+  --ch-11: #7a756b;
+  --ch-12: #bc812e;
+  --ch-13: #04a5e5;
+  --ch-14: #dd7878;
+  --ch-15: #6c6f85;
+  --ch-16: #3676b7; /* highlight */
+  --ch-17: #dc8a78;
+  --ch-18: #eff1f5;
+  --ch-19: #4c4f6912;
+  --ch-20: #04a5e540;
+  --ch-21: #1a85ff;
+  --ch-22: #7c7f934d;
+  --ch-23: #e6e9ef;
+  --ch-24: #acb0be;
+  --ch-25: #dce0e8;
+  --ch-26: #8c8fa1;
+  --ch-27: #ccd0da;
+  --ch-28: #ccd0da80;
+  --ch-29: #eff1f5e6;
+  --ch-30: #bcc0cc;
+  --ch-31: #6c6f85;
+  --ch-32: #5c5f77;
+  --ch-33: #acb0be;
+}
+
+.dark {
+  --background: var(--color-neutral-900);
+  --foreground: var(--color-neutral-50);
+  --card: var(--color-neutral-800);
+  --card-foreground: 0 0% 95%;
+  --popover: 0 0% 9%;
+  --popover-foreground: 0 0% 95%;
+  --primary: var(--color-neutral-50);
+  --primary-foreground: 0 0% 98%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: var(--color-neutral-300);
+  --muted-foreground: var(--color-neutral-250);
+  --accent: 12 6.2% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 85.7% 97.3%;
+  --border: var(--color-neutral-500);
+  --input: 240 3.7% 15.9%;
+  --ring: 17 6.5% 21%;
+  --hiro: var(--color-orange-700);
+  --card-hover: 15 5% 16%;
+  --icon: var(--color-neutral-50);
+  --inverted: var(--color-white);
+  --code: var(--color-black);
+  --highlight: 12 6.2% 15.9%;
+  --content: 40 5.33% 33.14%;
+  --dark: 30 5.7% 7.5%;
+  --gradient: #c0bdb4;
+  --contrast: 0 0% 100%;
+  --chart-1: 220 70% 50%;
+  --chart-2: 160 60% 45%;
+  --chart-3: 30 80% 55%;
+  --chart-4: 280 65% 60%;
+  --chart-5: 340 75% 55%;
+  --sidebar-background: 240 5.9% 10%;
+  --sidebar-foreground: 240 4.8% 95.9%;
+  --sidebar-primary: 224.3 76.3% 48%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 240 3.7% 15.9%;
+  --sidebar-accent-foreground: 240 4.8% 95.9%;
+  --sidebar-border: 240 3.7% 15.9%;
+  --sidebar-ring: 217.2 91.2% 59.8%;
+
+  /* CodeHike Styling */
+
+  --ch-0: var(--color-black);
+  --ch-1: #8c877d;
+  --ch-2: #9399b2; /* Not used */
+  --ch-3: #595650;
+  --ch-4: #c2ebc4;
+  --ch-5: #f5c2e7;
+  --ch-6: #ff5500;
+  --ch-7: #ff9ecf;
+  --ch-8: #94e2d5;
+  --ch-9: #b3d9ff;
+  --ch-10: #ff9ecf;
+  --ch-11: #8c877d;
+  --ch-12: #ff9ecf;
+  --ch-13: #89dceb;
+  --ch-14: #f2cdcd;
+  --ch-15: #a6adc8;
+  --ch-16: #8c877d; /* highlight */
+  --ch-17: #f5e0dc;
+  --ch-18: #1e1e2e;
+  --ch-19: #cdd6f412;
+  --ch-20: #89dceb40;
+  --ch-21: #3794ff;
+  --ch-22: #9399b240;
+  --ch-23: #181825;
+  --ch-24: #585b70;
+  --ch-25: #11111b;
+  --ch-26: #7f849c;
+  --ch-27: #313244;
+  --ch-28: #31324480;
+  --ch-29: #1e1e2ee6;
+  --ch-30: #a6adc8;
+  --ch-31: #585b70;
+  --ch-32: #45475a;
+  --ch-33: #bac2de;
+}
+
+@theme inline {
+  /* Base Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-hiro: var(--hiro);
+  --color-inverted: var(--inverted);
+
+  /* CodeHike Colors */
+  --color-ch-code: var(--ch-0);
+
+  /* Radius */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Sidebar Colors */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-synthesis-weight: none;
+  }
+  a {
+    @apply cursor-pointer;
+  }
+
+  pre {
+    @apply text-sm;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  code,
+  h1 a,
+  h2 a,
+  h3 a,
+  h4 a,
+  h5 a,
+  h6 a,
+  option {
+    font-family: var(--font-fono), sans-serif;
+    @apply text-primary;
+    @apply font-normal;
+  }
+
+  span {
+    font-family: var(--font-inter), sans-serif;
+  }
+
+  pre span {
+    font-family: var(--font-mono), sans-serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  /* override weird padding in OpenAPI  */
+  .flex.flex-row.items-center.gap-2.text-sm.p-3 {
+    padding-bottom: 15px !important;
+  }
+
+  /* remove margin left on fuma ui steps */
+  .fd-steps {
+    margin-left: 0 !important;
+  }
+
+  /* kill the vertical guide on every block rendered by Code Hike */
+  pre[data-ch="true"] .flex {
+    border-left: none !important;
+  }
+}
