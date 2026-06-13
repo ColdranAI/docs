@@ -221,3 +221,16 @@ Brief intro paragraph about what you'll build.
 - Specify language for all code blocks
 - Include context before code
 - Keep paragraphs to 2-3 sentences
+
+
+---
+
+[nermalcat69](https://github.com/nermalcat69) ([arjunaditya.xyz](https://arjunaditya.xyz)) is working on [graycup.org](https://graycup.org) / [graycup.com](https://graycup.com)
+
+Buy coffee or tea:
+https://graycup.in
+
+Bulk coffee or tea:
+https://b2b.graycup.in
+https://bulkgreencoffee.com
+https://bulkctc.com
